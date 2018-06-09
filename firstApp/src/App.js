@@ -22,7 +22,7 @@ import Page1 from './pages/Page1';
 import Feed from './pages/Feed';
 
 
-const describtion = Platform.select({
+const description = Platform.select({
   ios: 'This is my first iOS App',
   android: 'This is my first Android App',
 });
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 20,
   },
-  describtion: {
+  description: {
     textAlign: 'left',
     color: '#333333',
     marginBottom: 5,
@@ -60,8 +60,8 @@ export default class App extends Component {
         <Text style={styles.header}>
           Nico's First App
         </Text>
-        <Text style={styles.describtion}>
-        {describtion}
+        <Text style={styles.description}>
+        {description}
         </Text>
         <Text style={styles.cta}>
           Come Check it out!
