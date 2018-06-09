@@ -8,3 +8,7 @@ $ yarn global add react-native-cli
 and
 $ react-native init <appName>
 
+make sure you are in the right folder "firstApp" when you run "$ react-native run-ios" so that the app starts
+
+Had to set the XCode preference to use the right command line path and then it worked, it is unpacking and checking tons of stuff though right now and takes a couple minutes to set everything up.
+
