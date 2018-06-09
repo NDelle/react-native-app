@@ -10,7 +10,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 
@@ -65,6 +66,7 @@ export default class App extends Component {
         <Text style={styles.cta}>
           Come Check it out!
         </Text>
+        <Image source={require('./src/img/leo_trump.png')}/>
       </View>
     );
   }
