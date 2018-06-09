@@ -6,53 +6,86 @@
 
 import React, { Component } from 'react';
 import {
+  AppRegistry,
   Platform,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+//there is a styled-components part installed that I won't use right now but it give the ES6 CSS styles; maybe I will refactor later
+import styled from 'styled-components/native';
+
+import Page1 from './pages/Page1';
+import Feed from './pages/Feed';
+
+
+const describtion = Platform.select({
+  ios: 'This is my first iOS App',
+  android: 'This is my first Android App',
 });
-
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
   },
-  welcome: {
-    fontSize: 20,
+  header: {
+    fontSize: 30,
     textAlign: 'center',
-    margin: 10,
+    margin: 20,
   },
-  instructions: {
-    textAlign: 'center',
+  describtion: {
+    textAlign: 'left',
     color: '#333333',
     marginBottom: 5,
   },
+  cta: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: 'red',
+    marginTop: 20,
+    marginBottom: 5,
+  },
 });
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.header}>
+          Nico's First App
+        </Text>
+        <Text style={styles.describtion}>
+        {describtion}
+        </Text>
+        <Text style={styles.cta}>
+          Come Check it out!
+        </Text>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('App', () => App);
+
+
+const mainNavigator = TabNavigator({
+  Home: {
+    screen: App,
+    path: 'App'
+  },
+  Page1: {
+    screen: Page1,
+    path: './src/pages/Page1/index'
+  },
+  Feed: {
+    screen: Feed,
+    path: './src/pages/Feed/index'
+  }
+});
+
+AppRegistry.registerComponent('App', () => mainNavigator);
