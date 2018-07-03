@@ -1,11 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import {
+import { 
   AppRegistry,
   Platform,
   StyleSheet,
@@ -13,17 +7,15 @@ import {
   View,
   Image
 } from 'react-native';
-import { TabNavigator } from 'react-navigation';
 
-//there is a styled-components part installed that I won't use right now but it give the ES6 CSS styles; maybe I will refactor later
-import styled from 'styled-components/native';
+
+import { TabNavigator } from 'react-navigation';
 
 import Page1 from './pages/Page1';
 import Feed from './pages/Feed';
 
-
 const description = Platform.select({
-  ios: 'This is my first iOS App',
+  ios: 'Only for iOS',
   android: 'This is my first Android App',
 });
 
@@ -57,22 +49,23 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+      <Image
+          style={{width: 375, height: 250}}
+          source={require('firstApp/src/img/leo_trump.png')}/>
         <Text style={styles.header}>
-          Nico's First App
+          Nico's Diary
         </Text>
         <Text style={styles.description}>
         {description}
         </Text>
         <Text style={styles.cta}>
-          Come Check it out!
+          Enjoy the read!
         </Text>
-        <Image source={require('./src/img/leo_trump.png')}/>
       </View>
     );
   }
 }
 
-AppRegistry.registerComponent('App', () => App);
 
 
 const mainNavigator = TabNavigator({
@@ -90,4 +83,3 @@ const mainNavigator = TabNavigator({
   }
 });
 
-AppRegistry.registerComponent('App', () => mainNavigator);
