@@ -9,7 +9,7 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
       <Image
           style={{width: 375, height: 250}}
-          source={require('firstApp/src/img/leo_trump.png')}/>
+          source={require('MyApp/src/img/leo_trump.png')}/>
         <Text style={styles.header}>
           Nico's Diary
         </Text>
