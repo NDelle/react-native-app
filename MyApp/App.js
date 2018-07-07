@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 
 
 type Props = {};
@@ -14,7 +14,6 @@ export default class App extends Component<Props> {
           Nico's Diary
         </Text>
         <Text style={styles.description}>
-        {description}
         </Text>
         <Text style={styles.cta}>
           Enjoy the read!
@@ -23,6 +22,8 @@ export default class App extends Component<Props> {
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
