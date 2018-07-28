@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {RichTextEditor} from 'react-native-zss-rich-text-editor';
+import WebViewBridge from 'react-native-webview-bridge';
 
 
 type Props = {};
