@@ -1,19 +1,23 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {RichTextEditor} from 'react-native-zss-rich-text-editor';
+import {StyleSheet, Text, View, Image} from 'react-native';
 
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View>
-        <RichTextEditor
-        ref={(r) => this.richtext = r}
-        initialTitleHTML={'Title!!'}
-        initialContentHTML={'Hello <b>World</b> <p>this is a new paragraph</p> <p>this is another new paragraph</p>'}
-        editorInitializedCallback={() => this.onEditorInitialized()}
-        />
+      <View style={styles.container}>
+      <Image
+          style={{width: 375, height: 250}}
+          source={require('MyApp/src/img/leo_trump.png')}/>
+        <Text style={styles.header}>
+          Nico's Diary
+        </Text>
+        <Text style={styles.description}>
+        </Text>
+        <Text style={styles.cta}>
+          Enjoy the read!
+        </Text>
       </View>
     );
   }
